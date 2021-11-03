@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import CartContext from "./store/cart-context";
+import { useState } from "react";
 import Header from "./components/Layout/Header/Header";
 import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
@@ -18,8 +17,8 @@ function App() {
 
   return (
     <>
-      {cartIsShown && <Cart closeModal={hideCartHandler}/>}
-      <Header openModal={openCartHandler}/>
+      {cartIsShown && <Cart onHideCart={hideCartHandler}/>}
+      <Header onShowCart={openCartHandler}/>
       <main>
         <Meals />
       </main>

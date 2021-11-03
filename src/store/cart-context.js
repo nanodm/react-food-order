@@ -1,30 +1,19 @@
-import React, { useState } from "react";
+import React from 'react';
 
 const CartContext = React.createContext({
-  showCart: false,
-  openModal: () => {},
-  closeModal: () => {},
+  items: [],
+  totalAmount: 0,
+  addItem: (item) => {},
+  removeItem: (id) => {}
 });
 
 export const CartContextProvider = (props) => {
-  console.log('CartContextProvider');
-  const [showModal, setShowModal] = useState(false);
-
-  const openModalHandler = () => {
-    console.log('openModalHandler');
-    setShowModal(true);
-  };
-
-  const closeModalHandler = () => {
-    setShowModal(false);
-  };
-
   return (
     <CartContext.Provider
       value={{
-        showCart: showModal,
-        openModal: openModalHandler,
-        closeModal: closeModalHandler,
+        // showCart: showModal,
+        // openModal: openModalHandler,
+        // closeModal: closeModalHandler,
       }}
     ></CartContext.Provider>
   );
